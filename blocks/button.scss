@@ -1,0 +1,16 @@
+.button {
+  font-size: 13px;
+  color: $white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  @include ubuntu(medium);
+  cursor: pointer;
+  border: none;
+}
+
+.order-button {
+  padding: 13px 15px;
+  background-color: $orange;
+}
+
+

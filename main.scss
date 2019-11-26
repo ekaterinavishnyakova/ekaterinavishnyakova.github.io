@@ -1,0 +1,21 @@
+
+$black: #2f3234;
+$yellow: #f9b43b;
+$white: #ffffff;
+$orange: #e45028;
+
+
+@import "base/normalize.scss";
+@import "base/layout.scss";
+@import "base/fonts";
+
+@import "blocks/header.scss";
+@import "blocks/logo.scss";
+@import "blocks/nav.scss";
+@import "blocks/button.scss";
+@import "blocks/scrollbtn.scss";
+@import "blocks/title.scss";
+@import "blocks/welcome-page.scss";
+@import "blocks/advantages.scss";
+@import "blocks/reviews.scss";
+@import "blocks/slider.scss";

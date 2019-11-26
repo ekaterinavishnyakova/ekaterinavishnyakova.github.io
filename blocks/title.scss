@@ -1,0 +1,20 @@
+.title {
+  @include gagalin();
+  font-size: 72px;
+  color: $yellow;
+  font-style: normal;
+}
+
+.welcome-page__title {
+  color: $yellow;
+  line-height: 0.92;
+  margin-left: 10px;
+  margin-top: 35px;
+}
+
+.welcome-page__another-title {
+  @include lifehack();
+  font-size: 65px;
+  color: $white;
+  margin-top: 40px;
+}
