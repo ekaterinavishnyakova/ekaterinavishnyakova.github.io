@@ -1,0 +1,22 @@
+.socialmedia__list {
+    display: flex;
+    justify-content: space-evenly;
+}
+ 
+
+.socialmedia__item {
+    margin-right: rem(20px);
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.socialmedia__icon {
+    width: rem(20px);
+    height: rem(20px);
+    opacity: 0.3;
+    &:hover {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}

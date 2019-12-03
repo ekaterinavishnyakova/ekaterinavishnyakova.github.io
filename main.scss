@@ -4,7 +4,7 @@ $yellow: #f9b43b;
 $white: #ffffff;
 $orange: #e45028;
 
-
+@import "base/media.scss";
 @import "base/normalize.scss";
 @import "base/layout.scss";
 @import "base/fonts";
@@ -18,4 +18,11 @@ $orange: #e45028;
 @import "blocks/welcome-page.scss";
 @import "blocks/advantages.scss";
 @import "blocks/reviews.scss";
+@import "blocks/team.scss";
+@import "blocks/menu.scss";
+@import "blocks/delivery.scss";
+@import "blocks/map.scss";
+@import "blocks/footer.scss";
+@import "blocks/contacts.scss";
+@import "blocks/socialmedia.scss";
 @import "blocks/slider.scss";

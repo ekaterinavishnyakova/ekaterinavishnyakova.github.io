@@ -2,20 +2,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include tablets {
+    display: none;
+  }
 }
 
 .nav__item {
-  margin-right: 17px;
+  margin-right: rem(15px);
 
   &::after {
     content: "";
     display: inline-block;
     vertical-align: middle;
-    width: 5px;
-    height: 5px;
+    width: rem(5px);
+    height: rem(5px);
     border-radius: 50%;
     background-color: #ffffff;
-    margin-left: 17px;
+    margin-left: rem(15px);
   }
 
   &:last-child {
@@ -27,7 +30,7 @@
 }
 
 .nav__link {
-  font-size: 13px;
+  font-size: rem(13px);
   font-weight: 500;
   line-height: 2.31;
   color: $white;

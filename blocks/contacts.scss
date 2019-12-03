@@ -1,0 +1,21 @@
+
+.contacts__address {
+    @include ubuntu(300);
+    line-height: 1.71;
+    color: $white;
+    padding-bottom: rem(5px);
+}
+
+.contacts__phone-number {
+    @include ubuntu(bold);
+    color: $orange;
+}
+
+
+.contacts__phone-icon {
+    height: rem(12px);
+    width: rem(11px);
+    margin-right: rem(5px);
+}
+
+

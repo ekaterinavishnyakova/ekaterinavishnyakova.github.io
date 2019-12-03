@@ -1,31 +1,38 @@
+html {
+  font-size: rem(16px);
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-size: 14px;
+  font-size: rem(14px);
   font-family: "Ubuntu";
 }
 
  /*.wrapper {
     overflow: hidden;
     min-height: 100%;
-    min-width: 1100px;
+    min-width: rem(1100px);
   }*/
   
   .container {
     margin: 0 auto;
-    width: 970px;
+    max-width: rem(940px);
+    width: 95%;
   }
   
   .section {
     height: 100vh;
     width: 100vw;
-    min-height: 650px;
+    min-height: rem(650px);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   
 
@@ -36,6 +43,13 @@ body {
 a {
   text-decoration: none;
 }
+
+input:focus {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+ 
 
 ul {
     padding: 0;
