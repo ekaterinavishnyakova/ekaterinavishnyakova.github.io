@@ -469,7 +469,7 @@ header {
   font-style: normal; }
 
 .welcome-page {
-  background-image: url(../Img/picture/bg-main.jpg);
+  background-image: url(../img/picture/bg-main.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -532,7 +532,7 @@ header {
       font-size: 2.875rem; } }
 
 /*.welcome-page__pic::before {
-    content: url('../Img/icons/drops.svg');
+    content: url('../img/icons/drops.svg');
     display: block;
     position: relative;
     width: 100%;
@@ -855,7 +855,7 @@ header {
       justify-content: center; } }
 
 .menu {
-  background-image: url("/img/picture/bg-menu.jpg");
+  background-image: url("../img/picture/bg-menu.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -928,7 +928,7 @@ header {
   padding-left: 2.1875rem; }
 
 .delivery {
-  background-image: url("/img/picture/bg-delivery.jpg");
+  background-image: url("../img/picture/bg-delivery.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat; }
