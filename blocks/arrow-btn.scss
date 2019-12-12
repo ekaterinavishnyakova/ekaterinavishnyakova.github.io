@@ -1,0 +1,21 @@
+.arrow-btn {
+    position: absolute;
+    bottom: rem(20px);
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 17;
+}
+
+.arrow-btn__pic {
+    width: rem(29px);
+    height:rem(14px);
+}
+
+.arrow{
+    &--left{
+        transform: rotate(90deg);
+    }
+    &--right{
+        transform: rotate(-90deg);
+    }
+}

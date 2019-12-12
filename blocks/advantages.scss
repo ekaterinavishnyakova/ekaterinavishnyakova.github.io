@@ -89,7 +89,8 @@
 
   @include phones {
     margin-right: rem(10px);
-   
+    width: rem(100px);
+    flex: 0 0 auto;
   }
 }
 

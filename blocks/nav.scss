@@ -1,24 +1,24 @@
 .nav__list {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  @include tablets {
+  @include nav-tablets {
     display: none;
   }
 }
 
 .nav__item {
-  margin-right: rem(15px);
+  margin-right: rem(8px);
 
   &::after {
     content: "";
     display: inline-block;
     vertical-align: middle;
-    width: rem(5px);
-    height: rem(5px);
+    width: rem(4px);
+    height: rem(4px);
     border-radius: 50%;
     background-color: #ffffff;
-    margin-left: rem(15px);
+    margin-left: rem(8px);
   }
 
   &:last-child {
@@ -34,4 +34,119 @@
   font-weight: 500;
   line-height: 2.31;
   color: $white;
+}
+
+.hamburger-menu {
+  display: none;
+  @include nav-tablets {
+  margin-left: rem(20px);
+  display: block;
+  position: relative;
+  width: rem(24px);
+  height: rem(4px);
+  background-color: $white;
+  border-radius: rem(2px);
+  cursor: pointer;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: rem(-8px);
+    width: rem(24px);
+    height: rem(4px);
+    background-color: $white;
+    border-radius: rem(2px);
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: rem(8px);
+    width: rem(24px);
+    height: rem(4px);
+    background-color: $white;
+    border-radius: rem(2px);
+  }
+}
+}
+
+.hidden-menu {
+  display: flex;
+  justify-content: space-between;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($black, .97);
+  background-size: cover;
+  z-index: 18;
+  padding: 5% 10%;
+  
+}
+
+.hidden-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: rem(135px);
+}
+
+.hidden-menu__nav-item {
+  text-align: center;
+  margin-right: rem(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: rem(20px);
+
+  &::after {
+    content: "";
+    display: block;
+    width: rem(4px);
+    height: rem(4px);
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin-top: rem(20px);
+  }
+
+  &:last-child {
+    text-align: center;
+  }
+
+  &:last-child {
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+}
+
+.hidden-menu__nav-link {
+  @include ubuntu(300);
+  font-size: rem(23px);
+  line-height: 1.67;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.close-btn {
+  display: block;
+  height: rem(25px); 
+  width: rem(3px);
+  position: relative; 
+  background-color: $white;
+  transform: rotate(45deg);
+  margin-top: rem(25px);
+  cursor: pointer;
+  &::after {
+    content: '';
+    height: rem(25px); 
+    width: rem(3px);
+    position: absolute; 
+    transform: rotate(-90deg);
+    background-color: $white;
+  }
 }

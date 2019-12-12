@@ -10,7 +10,6 @@
   width: 100%;
   @include tablets {
     flex-direction: column;
-    padding: 0 10%;
   }
 }
 
@@ -25,7 +24,7 @@
   width: 50%;
   @include tablets {
     width: 100%;
-    padding: 0 15%;
+    padding: 0 2%;
   }
 }
 
@@ -33,6 +32,11 @@
   flex: 1;
   margin-right: rem(20px);
   margin-bottom: rem(10px);
+  @include tablets {
+    &:last-child {
+      margin-right: 0;
+    }
+  } 
 }
 
 .delivery-form__row {
@@ -47,7 +51,7 @@
   font-size: rem(14px);
   padding: rem(10px) rem(15px);
   &:focus {
-      border: solid rem(2px) $yellow;
+      outline: solid rem(2px) $yellow;
   }
 }
 
@@ -63,13 +67,16 @@
   resize: none;
   height: rem(110px);
   margin-bottom: rem(10px);
+  &:focus {
+    outline: solid rem(2px) $yellow;
+}
 }
 
-.delivery__radio-item {
+.delivery-form__radio-item {
   position: absolute;
   visibility: hidden;
   &:checked {
-    & + .delivery__radio-change {
+    & + .delivery-form__radio-change {
       &::after {
         opacity: 1;
       }
@@ -80,15 +87,14 @@
   }
 }
 
-.delivery__radio {
+.delivery-form__radio {
   display: flex;
   align-items: center;
   margin-right: rem(20px);
   margin-bottom: rem(13px);
 }
 
-.delivery__radio-change {
-  display: block;
+.delivery-form__radio-change {
   width: rem(15px);
   height: rem(15px);
   border-radius: 50%;
@@ -97,6 +103,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
   &::after {
     content: "";
     display: block;
@@ -108,19 +115,19 @@
   }
 }
 
-.delivery__radio--checkbox {
-  .delivery__radio-change {
+.delivery-form__radio--checkbox {
+  .delivery-form__radio-change {
     border-radius: 0;
   }
-  .delivery__radio-item {
-    & + .delivery__radio-change {
+  .delivery-form__radio-item {
+    & + .delivery-form__radio-change {
       &:after {
         background: transparent;
       }
     }
   }
-  .delivery__radio-item:checked {
-    & + .delivery__radio-change {
+  .delivery-form__radio-item:checked {
+    & + .delivery-form__radio-change {
       &:after {
         display: block;
         width: rem(11px);
@@ -138,7 +145,7 @@ background: none;
 text-transform: none;
 }
 
-.delivery__radio-title {
+.delivery-form__radio-title {
     @include ubuntu(300);
     line-height: 1.71;   
     color: $white;

@@ -2,6 +2,12 @@
   @return $px / 16px + 0rem;
 }
 
+@mixin nav-tablets {
+  @media screen and (max-width: 860px) {
+    @content;
+  }
+}
+
 @mixin tablets {
   @media screen and (max-width: 768px) {
     @content;

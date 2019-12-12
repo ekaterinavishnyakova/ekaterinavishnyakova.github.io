@@ -29,6 +29,8 @@
 
 .welcome-page__pic {
   margin-bottom: rem(20px);
+  width: 100%;
+  height: 100%;
 
   @include tablets {
     margin-bottom: 0;
@@ -49,6 +51,7 @@
   @include tablets {
     text-align: center;
     margin-top: rem(10px);
+    font-size: rem(64px);
   }
   @include phones {
     font-size: rem(46px);
@@ -63,6 +66,7 @@
   @include tablets {
     text-align: center;
     margin-top: rem(20px);
+    font-size: rem(57px);
   }
   @include phones {
     font-size: rem(46px);

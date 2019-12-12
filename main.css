@@ -314,14 +314,13 @@ body {
   font-size: 0.875rem;
   font-family: "Ubuntu"; }
 
-/*.wrapper {
-   overflow: hidden;
-   min-height: 100%;
-   min-width: rem(1100px);
- }*/
+.wrapper {
+  overflow: hidden;
+  position: relative; }
+
 .container {
   margin: 0 auto;
-  max-width: 58.75rem;
+  max-width: 62.5rem;
   width: 95%; }
 
 .section {
@@ -388,7 +387,7 @@ address {
   src: url(/fonts/Ubuntu/Ubuntu-B.ttf);
   font-weight: bold;
   font-style: normal; }
-header {
+.header {
   position: absolute;
   width: 100%;
   z-index: 10; }
@@ -411,23 +410,23 @@ header {
 
 .nav__list {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     .nav__list {
       display: none; } }
 
 .nav__item {
-  margin-right: 0.9375rem; }
+  margin-right: 0.5rem; }
   .nav__item::after {
     content: "";
     display: inline-block;
     vertical-align: middle;
-    width: 0.3125rem;
-    height: 0.3125rem;
+    width: 0.25rem;
+    height: 0.25rem;
     border-radius: 50%;
     background-color: #ffffff;
-    margin-left: 0.9375rem; }
+    margin-left: 0.5rem; }
   .nav__item:last-child::after {
     content: "";
     display: none; }
@@ -437,6 +436,104 @@ header {
   font-weight: 500;
   line-height: 2.31;
   color: #ffffff; }
+
+.hamburger-menu {
+  display: none; }
+  @media screen and (max-width: 860px) {
+    .hamburger-menu {
+      margin-left: 1.25rem;
+      display: block;
+      position: relative;
+      width: 1.5rem;
+      height: 0.25rem;
+      background-color: #ffffff;
+      border-radius: 0.125rem;
+      cursor: pointer; }
+      .hamburger-menu:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -0.5rem;
+        width: 1.5rem;
+        height: 0.25rem;
+        background-color: #ffffff;
+        border-radius: 0.125rem; }
+      .hamburger-menu:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        width: 1.5rem;
+        height: 0.25rem;
+        background-color: #ffffff;
+        border-radius: 0.125rem; } }
+
+.hidden-menu {
+  display: flex;
+  justify-content: space-between;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(47, 50, 52, 0.97);
+  background-size: cover;
+  z-index: 18;
+  padding: 5% 10%; }
+
+.hidden-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8.4375rem; }
+
+.hidden-menu__nav-item {
+  text-align: center;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 1.25rem; }
+  .hidden-menu__nav-item::after {
+    content: "";
+    display: block;
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin-top: 1.25rem; }
+  .hidden-menu__nav-item:last-child {
+    text-align: center; }
+  .hidden-menu__nav-item:last-child::after {
+    content: "";
+    display: none; }
+
+.hidden-menu__nav-link {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.4375rem;
+  line-height: 1.67;
+  color: #ffffff;
+  text-transform: uppercase; }
+
+.close-btn {
+  display: block;
+  height: 1.5625rem;
+  width: 0.1875rem;
+  position: relative;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+  margin-top: 1.5625rem;
+  cursor: pointer; }
+  .close-btn::after {
+    content: '';
+    height: 1.5625rem;
+    width: 0.1875rem;
+    position: absolute;
+    transform: rotate(-90deg);
+    background-color: #ffffff; }
 
 .button {
   font-size: 0.8125rem;
@@ -451,14 +548,21 @@ header {
   padding: 0.8125rem 0.9375rem;
   background-color: #e45028; }
 
-.scroll__btn {
+.arrow-btn {
   position: absolute;
-  bottom: 2.5rem;
-  left: 50%; }
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 17; }
 
-.scroll__btn-pic {
+.arrow-btn__pic {
   width: 1.8125rem;
   height: 0.875rem; }
+
+.arrow--left {
+  transform: rotate(90deg); }
+.arrow--right {
+  transform: rotate(-90deg); }
 
 .title {
   font-family: 'Gagalin', Helvetica, sans-serif;
@@ -494,7 +598,9 @@ header {
       height: 100%; } }
 
 .welcome-page__pic {
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.25rem;
+  width: 100%;
+  height: 100%; }
   @media screen and (max-width: 768px) {
     .welcome-page__pic {
       margin-bottom: 0; } }
@@ -511,7 +617,8 @@ header {
   @media screen and (max-width: 768px) {
     .welcome-page__title {
       text-align: center;
-      margin-top: 0.625rem; } }
+      margin-top: 0.625rem;
+      font-size: 4rem; } }
   @media screen and (max-width: 480px) {
     .welcome-page__title {
       font-size: 2.875rem; } }
@@ -526,7 +633,8 @@ header {
   @media screen and (max-width: 768px) {
     .welcome-page__another-title {
       text-align: center;
-      margin-top: 1.25rem; } }
+      margin-top: 1.25rem;
+      font-size: 3.5625rem; } }
   @media screen and (max-width: 480px) {
     .welcome-page__another-title {
       font-size: 2.875rem; } }
@@ -618,7 +726,9 @@ header {
   align-items: center; }
   @media screen and (max-width: 480px) {
     .advantages__img {
-      margin-right: 0.625rem; } }
+      margin-right: 0.625rem;
+      width: 6.25rem;
+      flex: 0 0 auto; } }
 
 .advantages__name {
   font-family: 'Lifehack', Helvetica, sans-serif;
@@ -644,6 +754,176 @@ header {
     .advantages__desc {
       text-align: start;
       font-size: 0.8125rem; } }
+
+.burgers {
+  background-image: linear-gradient(to top, #f9b43b, #eb8c38, #f9b43b);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative; }
+
+.burgers__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.burgers__content {
+  width: 100%;
+  height: 100%; }
+
+.burgers__item {
+  display: flex;
+  flex: 1;
+  width: 100%; }
+  @media screen and (max-width: 768px) {
+    .burgers__item {
+      flex-direction: column;
+      padding: 2% 4%; } }
+
+.burgers__visual {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+  @media screen and (max-width: 768px) {
+    .burgers__visual {
+      flex-direction: row;
+      width: 100%; } }
+
+.burgers__pic {
+  margin-bottom: 0.3125rem; }
+
+.burgers__img {
+  width: 100%;
+  height: 100%; }
+
+.burgers__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 3.125rem; }
+  @media screen and (max-width: 768px) {
+    .burgers__info {
+      align-items: center;
+      margin-top: 1.25rem; } }
+
+.burgers__order-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 1.875rem; }
+
+.burgers__title {
+  color: #ffffff;
+  line-height: 0.89; }
+  @media screen and (max-width: 768px) {
+    .burgers__title {
+      text-align: center; } }
+
+.burgers__text {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.71;
+  color: #ffffff;
+  margin-top: 2.8125rem; }
+  @media screen and (max-width: 768px) {
+    .burgers__text {
+      text-align: center;
+      margin-top: 1.25rem; } }
+
+.burgers-price {
+  font-family: 'Gagalin', Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.875rem;
+  color: #e45028; }
+  @media screen and (max-width: 768px) {
+    .burgers-price {
+      margin-right: 1.25rem; } }
+
+.burgers__price-number {
+  font-size: 4.5rem; }
+
+.burgers__button {
+  display: inline; }
+
+.burgers__ingredients-dropout {
+  position: absolute;
+  top: -62.5rem;
+  left: 5.625rem;
+  min-width: 16.875rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.3125rem;
+  opacity: 0;
+  padding: 1.25rem; }
+
+.burgers__ingredients {
+  position: relative; }
+
+.burgers__ingredients-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.625rem;
+  height: 5.625rem;
+  background-color: rgba(227, 80, 40, 0.4);
+  border-radius: 0.3125rem;
+  cursor: pointer; }
+  .burgers__ingredients-btn:hover {
+    background-color: #e35028;
+    transition: opacity 0.5s; }
+  .burgers__ingredients-btn:hover .burgers__ingredients-dropout {
+    opacity: 1;
+    top: 0;
+    transition: opacity .5s; }
+
+.burgers__ingredients-img {
+  max-height: 2.75rem;
+  opacity: 1; }
+
+.burgers__ingredients-column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.burgers__ingredients-name, .burgers__ingredients-weight {
+  color: #2f3234; }
+
+.burgers__ingredients-pic {
+  max-width: 3.125rem;
+  max-height: 3.125rem; }
+
+.burgers__calories {
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+
+.burgers__calories-img {
+  opacity: 0.5; }
+
+.burgers__calories-pic {
+  max-height: 3.75rem;
+  max-width: 3.75rem; }
+
+.burgers__calories-number {
+  position: absolute;
+  top: 1.5625rem;
+  left: 0.9375rem;
+  font-family: 'Gagalin', Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.5); }
+
+.burgers__calories-text {
+  font-family: 'Gagalin', Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 0.9375rem; }
 
 .reviews__list {
   width: 100%;
@@ -779,7 +1059,7 @@ header {
     border-top: none; }
   @media screen and (max-width: 768px) {
     .team__item {
-      margin-left: 3.125rem;
+      margin-left: 0;
       align-items: center;
       margin-bottom: 0.625rem; } }
 
@@ -938,8 +1218,7 @@ header {
   width: 100%; }
   @media screen and (max-width: 768px) {
     .delivery-form {
-      flex-direction: column;
-      padding: 0 10%; } }
+      flex-direction: column; } }
 
 .delivery__title {
   text-align: center;
@@ -952,12 +1231,15 @@ header {
   @media screen and (max-width: 768px) {
     .delivery-form__column {
       width: 100%;
-      padding: 0 15%; } }
+      padding: 0 2%; } }
 
 .delivery-form__part {
   flex: 1;
   margin-right: 1.25rem;
   margin-bottom: 0.625rem; }
+  @media screen and (max-width: 768px) {
+    .delivery-form__part:last-child {
+      margin-right: 0; } }
 
 .delivery-form__row {
   display: flex; }
@@ -970,7 +1252,7 @@ header {
   font-size: 0.875rem;
   padding: 0.625rem 0.9375rem; }
   .delivery-form__input:focus {
-    border: solid 0.125rem #f9b43b; }
+    outline: solid 0.125rem #f9b43b; }
 
 .delivery-form__title {
   font-family: 'Ubuntu', Helvetica, sans-serif;
@@ -984,24 +1266,25 @@ header {
   resize: none;
   height: 6.875rem;
   margin-bottom: 0.625rem; }
+  .delivery-form__input--textarea:focus {
+    outline: solid 0.125rem #f9b43b; }
 
-.delivery__radio-item {
+.delivery-form__radio-item {
   position: absolute;
   visibility: hidden; }
-  .delivery__radio-item:checked + .delivery__radio-change::after {
+  .delivery-form__radio-item:checked + .delivery-form__radio-change::after {
     opacity: 1; }
   @media screen and (max-width: 768px) {
-    .delivery__radio-item {
+    .delivery-form__radio-item {
       text-align: center; } }
 
-.delivery__radio {
+.delivery-form__radio {
   display: flex;
   align-items: center;
   margin-right: 1.25rem;
   margin-bottom: 0.8125rem; }
 
-.delivery__radio-change {
-  display: block;
+.delivery-form__radio-change {
   width: 0.9375rem;
   height: 0.9375rem;
   border-radius: 50%;
@@ -1009,8 +1292,9 @@ header {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .delivery__radio-change::after {
+  align-items: center;
+  flex: 0 0 auto; }
+  .delivery-form__radio-change::after {
     content: "";
     display: block;
     width: 0.4375rem;
@@ -1019,11 +1303,11 @@ header {
     background-color: #e45028;
     opacity: 0; }
 
-.delivery__radio--checkbox .delivery__radio-change {
+.delivery-form__radio--checkbox .delivery-form__radio-change {
   border-radius: 0; }
-.delivery__radio--checkbox .delivery__radio-item + .delivery__radio-change:after {
+.delivery-form__radio--checkbox .delivery-form__radio-item + .delivery-form__radio-change:after {
   background: transparent; }
-.delivery__radio--checkbox .delivery__radio-item:checked + .delivery__radio-change:after {
+.delivery-form__radio--checkbox .delivery-form__radio-item:checked + .delivery-form__radio-change:after {
   display: block;
   width: 0.6875rem;
   height: 0.5625rem;
@@ -1036,7 +1320,7 @@ header {
   font-weight: 300;
   text-transform: none; }
 
-.delivery__radio-title {
+.delivery-form__radio-title {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-weight: 300;
   line-height: 1.71;
@@ -1064,6 +1348,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.625rem 0.3125rem; }
+  @media screen and (max-width: 480px) {
+    .footer__container {
+      flex-direction: column; } }
 
 .contacts__address {
   font-family: 'Ubuntu', Helvetica, sans-serif;
@@ -1077,6 +1364,10 @@ header {
   font-weight: bold;
   font-style: normal;
   color: #e45028; }
+  @media screen and (max-width: 480px) {
+    .contacts__phone-number {
+      text-align: center;
+      margin-bottom: 1.25rem; } }
 
 .contacts__phone-icon {
   height: 0.75rem;
