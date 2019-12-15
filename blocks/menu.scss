@@ -28,17 +28,17 @@
 .menu-accordion__item {
   height: 100%;
   display: flex;
-
-  &--active,
-  &:hover {
+  &--active {
     .menu-accordion__content {
       overflow: hidden;
       background: rgba($black, 0.93);
-      width: rem(540px);
-      transition: 0.3s;
     }
     .menu-accordion__key-name {
       color: $yellow;
+    }
+    .menu-accordion__text {
+      width: rem(540px);
+      padding-left: rem(35px);
     }
   }
 }
@@ -71,7 +71,7 @@
 .menu-accordion__content {
   overflow: hidden;
   background: rgba($black, 0.93);
-  width: 0;
+ 
 }
 
 .menu-accordion__text {
@@ -80,5 +80,6 @@
   @include ubuntu(300);
   line-height: 1.714;
   padding-top: rem(60px);
-  padding-left: rem(35px);
+ 
+  width: 0;
 }
