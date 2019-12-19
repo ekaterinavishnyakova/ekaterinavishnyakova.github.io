@@ -1,0 +1,34 @@
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($black, .97);
+  background-size: cover;
+  z-index: 18;
+  
+  display: none;
+}
+
+.popup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $white;
+    border-radius: rem(5px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(200px);
+    height: rem(100px);
+    z-index: 40;
+}
+
+.popup__text {
+    @include ubuntu(300);
+    margin-top: rem(10px);
+  }
+  

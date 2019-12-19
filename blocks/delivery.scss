@@ -51,7 +51,8 @@
   font-size: rem(14px);
   padding: rem(10px) rem(15px);
   &:focus {
-      outline: solid rem(2px) $yellow;
+    outline: none;
+    border: solid rem(2px) $yellow;
   }
 }
 
@@ -68,7 +69,8 @@
   height: rem(110px);
   margin-bottom: rem(10px);
   &:focus {
-    outline: solid rem(2px) $yellow;
+    outline: none;
+    border: solid rem(2px) $yellow;
 }
 }
 
