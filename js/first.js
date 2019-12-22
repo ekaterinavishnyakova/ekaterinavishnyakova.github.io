@@ -119,41 +119,32 @@ function createModalWindow(content) {
 }
 
 //form
-const deliveryForm = document.querySelector('#deliveryForm');
+const myForm = document.querySelector('.delivery-form__item');
 const deliveryButton = document.querySelector('#deliveryButton');
 const popup = document.querySelector('#popup');
 
-deliveryForm.addEventListener('submit', event => {
-    event.preventDefault();
 
-    var formData = new FormData(deliveryForm);
-    formData.append('name', deliveryForm.elements.name.value);
-    formData.append('phone', deliveryForm.elements.phone.value);
-    formData.append('comment', deliveryForm.elements.comment.value);
-    formData.append('to', 'katya@nekatya');
 
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
-    xhr.open("POST", ' https://webdev-api.loftschool.com/sendmail');
-    xhr.send(formData);
-
-    xhr.addEventListener('load', () => {
-        
-        if (xhr.status) {
-            console.log (xhr.status);
-            console.log(typeof xhr.response);
-
+myForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(myForm);
+    formData.append("to", "myExamplEmail@mail.ru");
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://webdev-api.loftschool.com/sendmail");
+    request.send(formData);
+    request.addEventListener("load", function() {
+        const responce = JSON.parse(request.response);
+        if (request.status < 400) {
+            myForm.reset();
             popup.style.display = 'flex';
         }
     });
-
-
 });
-const closePopupButton = document.querySelector('#popup');
-closePopupButton.addEventListener('click', function (e) {
-    e.preventDefault();
+deliveryButton.addEventListener('click', function() {
     popup.style.display = 'none';
-});
+})
+
+
 
 
 //map

@@ -12,6 +12,9 @@
 }
 
 .advantages__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 100%;
   margin-bottom: rem(70px);
@@ -42,7 +45,6 @@
   color: $black;
   line-height: 0.89;
   text-align: center;
-  margin-top: rem(90px);
   @include tablets {
     margin-top: rem(70px);
   }
