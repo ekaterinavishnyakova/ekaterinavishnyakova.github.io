@@ -134,7 +134,7 @@ deliveryForm.addEventListener('submit', event => {
 
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
-    xhr.open("POST", ' https://webdev-api.loftschool.com/sendmail.fail');
+    xhr.open("POST", ' https://webdev-api.loftschool.com/sendmail');
     xhr.send(formData);
 
     xhr.addEventListener('load', () => {
@@ -144,7 +144,6 @@ deliveryForm.addEventListener('submit', event => {
             console.log(typeof xhr.response);
 
             popup.style.display = 'flex';
-            console.log('Все ок');
         }
     });
 
