@@ -133,13 +133,16 @@ deliveryForm.addEventListener('submit', event => {
     formData.append('to', 'katya@nekatya');
 
     var xhr = new XMLHttpRequest();
-    //xhr.responseType = 'json';
-    xhr.open("POST", ' https://webdev-api.loftschool.com/sendmail');
+    xhr.responseType = 'json';
+    xhr.open("POST", ' https://webdev-api.loftschool.com/sendmail.fail');
     xhr.send(formData);
 
     xhr.addEventListener('load', () => {
-        var answer = JSON.parse(xhr.response);
-        if (xhr.status < 400) {
+        
+        if (xhr.status) {
+            console.log (xhr.status);
+            console.log(typeof xhr.response);
+
             popup.style.display = 'flex';
             console.log('Все ок');
         }
