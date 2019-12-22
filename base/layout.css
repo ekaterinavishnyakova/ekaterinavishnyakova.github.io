@@ -1,29 +1,24 @@
 html {
   font-size: rem(16px);
-  height: auto !important;
-}
+  height: auto !important; }
 
 html,
 body {
-  height: 100%;
-}
+  height: 100%; }
 
 body {
   font-size: rem(14px);
-  font-family: "Ubuntu";
-}
+  font-family: "Ubuntu"; }
 
 .wrapper {
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
 
 .container {
   margin: 0 auto;
   max-width: rem(1000px);
   width: 95%;
-  height: 100%;
-}
+  height: 100%; }
 
 .section {
   height: 100vh;
@@ -33,31 +28,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 input:focus {
   text-decoration: none;
   border: none;
-  outline: none;
-}
+  outline: none; }
 
 ul {
   padding: 0;
-  margin: 0;
-
-  & > li {
-    list-style: none;
-  }
-}
+  margin: 0; }
+  ul > li {
+    list-style: none; }
 
 h1,
 h2,
@@ -66,9 +54,9 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 address {
-  font-style: normal;
-}
+  font-style: normal; }
+
+/*# sourceMappingURL=layout.css.map */

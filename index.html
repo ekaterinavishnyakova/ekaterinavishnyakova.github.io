@@ -7,11 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=61ddc57f-51a2-47b7-a1c3-4269dd54af93&lang=ru_RU"
-        type="text/javascript">
-        </script>
-    <script src="./js/jquery.js"></script>
-   <!-- <script src="./js/fullpage.js"></script> -->
 
 </head>
 
@@ -1147,262 +1142,47 @@
 
     -->
 
+  <!--  <div class="reviews__info-hover">
+        <h5 class="reviews__title">Константин Спилберг</h5>
+        <div class="reviews__desc">
+            <p>
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой
+                сочной, а сыр таким расплавленным.
+            </p>
+        </div>
+        <button type="button" class="button reviews__button">Подробнее</button>
+
+    </div>-->
+
     <script type="template" id="modal-windowTemplate">
 
-                <div class="modal-window__content">
-                    <div class="modal-window__name">Константин Спилберг</div>
-                     <div class="modal-window__review"> 
+                <div class="modal-window__block">
+                    <div class="modal-window__content">
+                        <div class="modal-window__name">Константин Спилберг</div>
+                        <div class="modal-window__review"> 
                         Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                         забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой
                         сочной, а сыр таким расплавленным.
-                     </div>
-               
+                        </div>
+                    </div>
+                    <a href="#" class="modal-window__close-btn"></a>
                 </div>
-                <a href="#" class="modal-window__close-btn close-btn"></a>
-           
+              
 
         </script>
 
 
-
-
-
-    <script>
-        //menu
-        var menuButton = document.querySelector('.hamburger-menu');
-        var hiddenMenu = document.querySelector('.hidden-menu');
-        var closeButton = document.querySelector('.close-btn');
-        menuButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            hiddenMenu.style.display = 'flex';
-        });
-        closeButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            hiddenMenu.style.display = 'none';
-        });
-
-        //slider
-        const left = document.querySelector("#left");
-        const right = document.querySelector("#right");
-        const slider = document.querySelector(".burgers__list");
-
-        right.addEventListener('click', function (event) {
-            event.preventDefault();
-            loop('right');
-        });
-
-        left.addEventListener("click", function (event) {
-            event.preventDefault();
-            loop('left');
-        });
-        function loop(direction) {
-            if (direction === "right") {
-                slider.appendChild(slider.firstElementChild);
-            }
-            else {
-                slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
-            }
-        };
-
-        //accordion-vertical
-        const teamItems = document.querySelectorAll('.team__item');
-        teamItemsActive = document.getElementsByClassName('team__item--active');
-        Array.from(teamItems).forEach(function (items, i, teamItems) {
-            items.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (teamItemsActive.length > 0 && teamItemsActive[0] !== this)
-                    teamItemsActive[0].classList.remove('team__item--active');
-                this.classList.toggle('team__item--active');
-            });
-
-        });
-
-        //accordion-horizontal
-        const menuItems = document.querySelectorAll('.menu-accordion__item');
-        menuItemsActive = document.getElementsByClassName('menu-accordion__item--active');
-        Array.from(menuItems).forEach(function (elems, i, menuItems) {
-            elems.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (menuItemsActive.length > 0 && menuItemsActive[0] !== this)
-                    menuItemsActive[0].classList.remove('menu-accordion__item--active');
-                this.classList.toggle('menu-accordion__item--active');
-            });
-
-        });
-
-
-        //modal window
-        const modalWindowButton = document.querySelectorAll('.reviews__button');
-        const modalWindow = createModalWindow('<div class="modal-window__name">Константин Спилберг</div><div class="modal-window__review"> Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</div>');
-
-        Array.from(modalWindowButton).forEach(function (elems, i, modalWindowButton) {
-            elems.addEventListener('click', function (e) {
-                e.preventDefault;
-                document.body.appendChild(modalWindow);
-            });
-        });
-
-        function createModalWindow(content) {
-            const modalWindowElement = document.createElement('div');
-            modalWindowElement.classList.add('modal-window');
-
-            const template = document.querySelector("#modal-windowTemplate");
-            modalWindowElement.innerHTML = template.innerHTML;
-            modalWindowElement.addEventListener('click', function (e) {
-                if (e.target === modalWindowElement) {
-                    closeModalWindow.click();
-                }
-            });
-
-
-            const closeModalWindow = modalWindowElement.querySelector(".modal-window__close-btn");
-            closeModalWindow.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.body.removeChild(modalWindowElement);
-            });
-
-            const modalWindowContent = modalWindowElement.querySelector(".modal-window__content");
-            modalWindowContent.innerHTML = content;
-
-            return modalWindowElement;
-        }
-
-        //form
-        const deliveryForm = document.querySelector('#deliveryForm');
-        const deliveryButton = document.querySelector('#deliveryButton');
-        const popup = document.querySelector('#popup');
-
-        deliveryForm.addEventListener('submit', event => {
-            event.preventDefault();
-
-            var formData = new FormData(deliveryForm);
-            formData.append('name', deliveryForm.elements.name.value);
-            formData.append('phone', deliveryForm.elements.phone.value);
-            formData.append('comment', deliveryForm.elements.comment.value);
-            formData.append('to', 'katya@nekatya');
-
-            var xhr = new XMLHttpRequest();
-            xhr.responseType = 'json';
-            xhr.open("POST", ' https://webdev-api.loftschool.com/sendmail');
-            xhr.send(formData);
-
-            xhr.addEventListener('load', () => {
-                if (xhr.status < 400) {
-                    popup.style.display = 'flex';
-                    console.log('Все ок');
-                }
-                //if (xhr.status) {
-                    
-                   // popup.style.display = 'flex';
-             //   }
-
-            });
-
-
-        });
-        const closePopupButton = document.querySelector('#popup');
-        closePopupButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            popup.style.display = 'none';
-        });
-
-
-        //map
-
-        function ready() {
-            ymaps.ready(function () {
-                var myMap = new ymaps.Map('map', {
-
-                    center: [54.71024095, 20.51061681],
-                    zoom: 9
-                }, {
-                    searchControlProvider: 'yandex#search'
-
-                }),
-
-                    // Создаём макет содержимого.
-                    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                    ),
-
-                    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                        hintContent: 'Собственный значок метки',
-                        balloonContent: 'Это красивая метка'
-                    }, {
-                        // Опции.
-                        // Необходимо указать данный тип макета.
-                        iconLayout: 'default#image',
-                        // Своё изображение иконки метки.
-                        iconImageHref: './img/icons/map-marker.svg',
-                        // Размеры метки.
-                        iconImageSize: [30, 42],
-                        // Смещение левого верхнего угла иконки относительно
-                        // её "ножки" (точки привязки).
-                        iconImageOffset: [-5, -38]
-                    }),
-
-
-
-                    myPlacemarkWithContent = new ymaps.Placemark([54.70051194, 20.49861694], {
-                        hintContent: 'Собственный значок метки с контентом',
-                        balloonContent: 'А эта — новогодняя',
-
-                    }, {
-                        // Опции.
-                        // Необходимо указать данный тип макета.
-                        iconLayout: 'default#image',
-                        // Своё изображение иконки метки.
-                        iconImageHref: './img/icons/map-marker.svg',
-                        // Размеры метки.
-                        iconImageSize: [48, 48],
-                        // Смещение левого верхнего угла иконки относительно
-                        // её "ножки" (точки привязки).
-                        iconImageOffset: [-24, -24],
-
-                    }),
-
-                    mySecondPlacemark = new ymaps.Placemark([54.7212675, 20.46990062], {
-                        hintContent: 'Собственный значок метки с контентом',
-                        balloonContent: 'А эта — новогодняя',
-
-                    }, {
-                        // Опции.
-                        // Необходимо указать данный тип макета.
-                        iconLayout: 'default#image',
-                        // Своё изображение иконки метки.
-                        iconImageHref: './img/icons/map-marker.svg',
-                        // Размеры метки.
-                        iconImageSize: [48, 48],
-                        // Смещение левого верхнего угла иконки относительно
-                        // её "ножки" (точки привязки).
-                        iconImageOffset: [-14, -4],
-                        // Смещение слоя с содержимым относительно слоя с картинкой.
-
-                    });
-
-                myMap.geoObjects
-                    .add(myPlacemark)
-                    .add(myPlacemarkWithContent)
-                    .add(mySecondPlacemark);
-
-                myMap.behaviors.disable('scrollZoom');
-            });
-
-
-        }
-
-        document.addEventListener("DOMContentLoaded", ready);
-
-        //fullpage scroll
-
-        //$('#fullpage').fullpage();
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=61ddc57f-51a2-47b7-a1c3-4269dd54af93&lang=ru_RU"
+        type="text/javascript">
+        </script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/fullpage.js"></script>
+    <script src="./js/first.js"></script>
 
 
 
 
-
-
-    </script>
 
 
 
