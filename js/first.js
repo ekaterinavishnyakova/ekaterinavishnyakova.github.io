@@ -138,7 +138,7 @@ deliveryForm.addEventListener('submit', event => {
     xhr.send(formData);
 
     xhr.addEventListener('load', () => {
-        var response = JSON.parse(xhr.response);
+        var answer = JSON.parse(xhr.response);
         if (xhr.status < 400) {
             popup.style.display = 'flex';
             console.log('Все ок');
