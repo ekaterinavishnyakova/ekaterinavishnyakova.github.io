@@ -1,0 +1,13 @@
+
+$black: #2f3234;
+$yellow: #f9b43b;
+$white: #ffffff;
+$orange: #e45028;
+$peach: #e35028;
+
+@import "base/*.scss";
+@import "base/layout.scss";
+@import "base/fonts.scss";
+@import "base/media.scss";
+
+@import "blocks/*.scss";

@@ -1,0 +1,121 @@
+.advantages {
+  background-image: url(../../img/picture/bg-secondpage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.advantages__container {
+  display: flex;
+  justify-content: center;
+}
+
+.advantages__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: rem(70px);
+
+  @include tablets {
+    padding: 10%;
+  }
+  @include phones {
+    padding: 0;
+  }
+}
+
+.advantages__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: rem(55px);
+  @include tablets {
+    margin-top: rem(35px);
+  }
+  @include phones {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.advantages__title {
+  color: $black;
+  line-height: 0.89;
+  text-align: center;
+  @include tablets {
+    margin-top: rem(70px);
+  }
+  @include phones {
+    margin-top: rem(40px)
+  }
+}
+
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  width: 33%;
+  margin-right: rem(35px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+  @include phones {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 0;
+  }
+}
+
+.advantages__text {
+  @include phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.advantages__img {
+  max-height: rem(84px);
+  margin-bottom: rem(30px);
+  align-items: center;
+
+  @include phones {
+    margin-right: rem(10px);
+    width: rem(100px);
+    flex: 0 0 auto;
+  }
+}
+
+.advantages__name {
+  @include lifehack();
+  font-size: rem(24px);
+  line-height: 1.17;
+  text-align: center;
+  color: $black;
+  @include phones {
+    text-align: start;
+  }
+}
+
+.advantages__desc {
+  opacity: 0.8;
+  @include ubuntu(300);
+  font-size: rem(14px);
+  line-height: 1.71;
+  text-align: center;
+  color: $black;
+  @include phones {
+    text-align: start;
+    font-size: rem(13px);
+  }
+}
