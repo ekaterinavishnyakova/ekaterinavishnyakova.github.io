@@ -39,6 +39,13 @@
     .menu-accordion__text {
       width: rem(540px);
       padding-left: rem(35px);
+      @include tablets {
+        width: rem(350px);
+      }
+      @include tablets {
+        width: rem(200px);
+        padding: 1% 0;
+      }
     }
   }
 }
@@ -71,7 +78,6 @@
 .menu-accordion__content {
   overflow: hidden;
   background: rgba($black, 0.93);
- 
 }
 
 .menu-accordion__text {
@@ -80,6 +86,5 @@
   @include ubuntu(300);
   line-height: 1.714;
   padding-top: rem(60px);
- 
   width: 0;
 }

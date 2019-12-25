@@ -50,7 +50,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  @include tablets {
+    width: 100%;
+  }
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .burgers__img {
@@ -82,6 +87,10 @@ object-fit: cover;
   line-height: 0.89;
   @include tablets {
     text-align: center;
+    font-size: rem(60px);
+  }
+  @include tablets {
+    font-size: rem(36px);
   }
 }
 

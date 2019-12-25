@@ -3,4 +3,11 @@
   font-size: rem(72px);
   color: $yellow;
   font-style: normal;
+  font-size: rem(60px);
+  @include tablets {
+    font-size: rem(60px);
+  }
+  @include tablets {
+    font-size: rem(36px);
+  }
 }
