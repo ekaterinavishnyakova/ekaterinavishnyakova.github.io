@@ -41,6 +41,12 @@ task('copy:html', () => {
     .pipe(reload({ stream: true }));
  })
 
+ task('copy:video', () => {
+  return src(`${SRC_PATH}/video/*.*`)
+    .pipe(dest('dist/video'))
+    .pipe(reload({ stream: true }));
+ })
+
  task('fonts', () => {
   return src(`${SRC_PATH}/fonts/**/*.*`)
     .pipe(dest('dist/fonts'))
@@ -124,18 +130,19 @@ task('watch', () => {
   watch('./src/img/icons/*.*', series('icons'));
   watch('./src/img/picture/*.*', series('copy:img'));
   watch('./src/fonts/**/*.*', series('fonts'));
+  watch('./src/video/*.*', series('copy:video'));
 })
-
+'copy:video'
  
  task('default',
  series(
    'clean',
-   parallel('copy:html', 'styles', 'scriptsVendors', 'scripts', 'fonts', 'icons', 'copy:img'),
+   parallel('copy:html', 'styles', 'scriptsVendors', 'scripts', 'fonts', 'icons', 'copy:img', 'copy:video'),
    parallel('watch', 'server')
 ));
 
 task('build',
  series(
    'clean',
-   parallel('copy:html', 'styles', 'scriptsVendors', 'scripts', 'fonts', 'icons','copy:img'))
+   parallel('copy:html', 'styles', 'scriptsVendors', 'scripts', 'fonts', 'icons','copy:img', 'copy:video'))
 );

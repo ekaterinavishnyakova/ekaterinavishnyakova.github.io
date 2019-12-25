@@ -211,7 +211,8 @@
                                 </div>
                                 <div class="burgers__calories">
                                     <svg class="burgers__calories-pic">
-                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img"></use>
+                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img">
+                                        </use>
                                     </svg>
                                     <div class="burgers__calories-number">1200</div>
                                     <div class="burgers__calories-text">ккал</div>
@@ -307,7 +308,8 @@
                                 </div>
                                 <div class="burgers__calories">
                                     <svg class="burgers__calories-pic">
-                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img"></use>
+                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img">
+                                        </use>
                                     </svg>
                                     <div class="burgers__calories-number">1200</div>
                                     <div class="burgers__calories-text">ккал</div>
@@ -402,7 +404,8 @@
                                 </div>
                                 <div class="burgers__calories">
                                     <svg class="burgers__calories-pic">
-                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img"></use>
+                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img">
+                                        </use>
                                     </svg>
                                     <div class="burgers__calories-number">1200</div>
                                     <div class="burgers__calories-text">ккал</div>
@@ -497,7 +500,8 @@
                                 </div>
                                 <div class="burgers__calories">
                                     <svg class="burgers__calories-pic">
-                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img"></use>
+                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img">
+                                        </use>
                                     </svg>
                                     <div class="burgers__calories-number">1200</div>
                                     <div class="burgers__calories-text">ккал</div>
@@ -592,7 +596,8 @@
                                 </div>
                                 <div class="burgers__calories">
                                     <svg class="burgers__calories-pic">
-                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img"></use>
+                                        <use xlink:href="./img/icons/sprite.svg#kkal" class="burgers__calories-img">
+                                        </use>
                                     </svg>
                                     <div class="burgers__calories-number">1200</div>
                                     <div class="burgers__calories-text">ккал</div>
@@ -895,11 +900,16 @@
                 </li>
             </ul>
         </section>
-        <section video>
-            <div class="container">
+        <section class="section video">
+            <div class="container video__container">
                 <h1 class="title video__title">Как мы работаем</h1>
                 <div class="video__wrapper">
-
+                    <div id="video__player">
+                        <video class="video__player-block" width='660' height='400' controls>
+                            <source src="./video/videoplayback.mp4" type='video/mp4'>
+                        </video>
+                    </div>
+                 <!--   <div class="video__player-btn"><img src="./img/icons/play.svg" alt=""></div>-->
                 </div>
             </div>
         </section>
@@ -1176,7 +1186,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=61ddc57f-51a2-47b7-a1c3-4269dd54af93&lang=ru_RU"
         type="text/javascript">
         </script>
-<!-- <script src="./scripts/libs/jquery.js"></script>
+    <!-- <script src="./scripts/libs/jquery.js"></script>
     <script src="./scripts/libs/fullpage.js"></script>
     <script src="./scripts/first.js"></script> -->
     <script src="./main.min.js"></script>

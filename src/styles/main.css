@@ -1691,7 +1691,7 @@ address {
   max-width: 28.75rem;
   max-height: 16.875rem;
   border-radius: 0.3125rem;
-  padding: 3% 3%; }
+  padding: 2% 3%; }
 
 .modal-window__content {
   display: flex;
@@ -1712,7 +1712,7 @@ address {
     margin-bottom: 0.9375rem;
     margin-right: 1.5625rem; }
   .modal-window__content .modal-window__review {
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Ubuntu', Helvetica, sans-serif;
     font-weight: 300;
     color: #2f3234;
