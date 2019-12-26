@@ -84,15 +84,24 @@ task('icons', () => {
     .pipe(reload({ stream: true }));
  });
   
-const libs = [
-    'node_modules/jquery/dist/jquery.js',
-    'node_modules/fullpage.js/dist/fullpage.js',
+ //const libs = [
+  //'node_modules/jquery/dist/jquery.js',
+  //'node_modules/fullpage.js/dist/fullpage.js',
     
-   ];
+ //];
  
+  task('scriptsVendors', () => {
+   return src(...JS_LIBS)
+    .pipe(concat('vendors.min.js', {newLine: ';'}))
+     .pipe(dest(DIST_PATH))
+     .pipe(reload({ stream: true }));
+  });
   
+  
+
+
  task('scripts', () => {
-  return src('src/scripts/*.js')
+  return src([...JS_LIBS,'src/scripts/*.js'])
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(concat('main.min.js', {newLine: ';'}))
     .pipe(gulpif(env === 'prod', babel({
@@ -104,14 +113,7 @@ const libs = [
     .pipe(reload({ stream: true }));
  });
 
- task('scriptsVendors', () => {
-  return src(libs)
-    .pipe(concat('vendors.min.js', {newLine: ';'}))
-    .pipe(dest(DIST_PATH))
-    .pipe(reload({ stream: true }));
- });
-
-
+ 
 
 task('server', () => {
     browserSync.init({
@@ -132,17 +134,17 @@ task('watch', () => {
   watch('./src/fonts/**/*.*', series('fonts'));
   watch('./src/video/*.*', series('copy:video'));
 })
-'copy:video'
+
  
  task('default',
  series(
    'clean',
-   parallel('copy:html', 'styles', 'scriptsVendors', 'scripts', 'fonts', 'icons', 'copy:img', 'copy:video'),
+   parallel('copy:html', 'styles', 'scripts', 'scriptsVendors', 'fonts', 'icons', 'copy:img', 'copy:video'),
    parallel('watch', 'server')
 ));
 
 task('build',
  series(
    'clean',
-   parallel('copy:html', 'styles', 'scriptsVendors', 'scripts', 'fonts', 'icons','copy:img', 'copy:video'))
+   parallel('copy:html', 'styles', 'scripts', 'scriptsVendors', 'fonts', 'icons','copy:img', 'copy:video'))
 );
