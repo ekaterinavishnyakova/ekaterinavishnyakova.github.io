@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "fullpage.js": "^3.0.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "normalize.css": "^8.0.1",
     "webpack": "^4.41.4"
   },
